@@ -310,10 +310,10 @@ export default function UsedCars() {
       <section className="py-12 bg-secondary">
         <div className="container">
           <h2 className="section-title">Used Cars by Body Type</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
             {bodyTypes.map((type) => (
-              <Link key={type} to={`/used-cars/body/${type.toLowerCase()}`} className="p-4 bg-card rounded-xl border border-border text-center hover:border-primary/50 hover:bg-muted transition-all">
-                <span className="text-sm font-medium text-foreground">{type}</span>
+              <Link key={type} to={`/used-cars/body/${type.toLowerCase()}`} className="flex items-center justify-center py-3 px-4 bg-card rounded-xl border border-border text-center hover:border-primary/50 hover:bg-muted transition-all min-h-[48px]">
+                <span className="text-sm font-medium text-foreground whitespace-nowrap">{type}</span>
               </Link>
             ))}
           </div>
