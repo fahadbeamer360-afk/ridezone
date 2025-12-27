@@ -50,57 +50,58 @@ export function HeroSearch({ onSearch }: HeroSearchProps) {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-5xl mx-auto">
       {/* Main Search Bar */}
-      <div className="bg-card/95 backdrop-blur-sm border border-border/80 rounded-2xl p-4 md:p-6 shadow-[0_8px_40px_-12px_hsla(0,0%,0%,0.8),0_0_0_1px_hsla(0,0%,100%,0.05)]">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Search Input */}
-          <div className="md:col-span-2 relative">
+      <div className="bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-5 md:p-8 shadow-[0_8px_40px_-12px_hsla(0,0%,0%,0.8)]">
+        {/* Search Inputs Row */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          {/* Search Input - Takes more space */}
+          <div className="md:col-span-6 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search cars, bikes, keywords..."
-              className="input-field w-full pl-12"
+              className="w-full h-14 bg-muted/80 border-0 rounded-xl pl-12 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
           </div>
 
           {/* Min Price */}
-          <div className="relative">
+          <div className="md:col-span-3">
             <input
               type="number"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
               placeholder="Min Price (PKR)"
-              className="input-field w-full"
+              className="w-full h-14 bg-muted/80 border-0 rounded-xl px-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
           </div>
 
           {/* Max Price */}
-          <div className="relative">
+          <div className="md:col-span-3">
             <input
               type="number"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
               placeholder="Max Price (PKR)"
-              className="input-field w-full"
+              className="w-full h-14 bg-muted/80 border-0 rounded-xl px-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
           </div>
         </div>
 
         {/* Action Row */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mt-4">
+        <div className="flex items-center justify-between mt-5">
           <Link
             to="/advanced-filters"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <SlidersHorizontal className="h-4 w-4" />
             Advanced Filters
             <ChevronRight className="h-4 w-4" />
           </Link>
 
-          <Button onClick={handleSearch} size="lg">
+          <Button onClick={handleSearch} size="lg" className="h-12 px-8 rounded-xl">
             <Search className="h-4 w-4 mr-2" />
             Search
           </Button>
