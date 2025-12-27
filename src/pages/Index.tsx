@@ -45,15 +45,23 @@ const Index = () => {
       
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-20">
+        <section className="relative py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-                Find Your Perfect Ride
+            {/* Logo + Tagline */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-12">
+              <img 
+                src="/lovable-uploads/ridezone-logo.png" 
+                alt="RideZone Logo" 
+                className="h-20 md:h-28 w-auto"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground italic text-center md:text-left">
+                Pakistan's Trusted<br />
+                Automobile Trading Platform
               </h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Pakistan's trusted open-source car and bike trading platform
-              </p>
             </div>
             <HeroSearch />
           </div>
